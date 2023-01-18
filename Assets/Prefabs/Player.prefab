@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1777776029}
   - component: {fileID: 1777776034}
   - component: {fileID: 1777776039}
+  - component: {fileID: 6055259488200010505}
   - component: {fileID: 326117424051115640}
   m_Layer: 0
   m_Name: Player
@@ -167,6 +168,23 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &6055259488200010505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3273970795460827450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5029500d0fab546bc6185fe4b0925a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushLayers:
+    serializedVersion: 2
+    m_Bits: 2147483647
+  canPush: 1
+  strength: 1.1
 --- !u!114 &326117424051115640
 MonoBehaviour:
   m_ObjectHideFlags: 0
