@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
+    public PlayerInput.StandingActions standing;
     private PlayerInput playerInput;
-    private PlayerInput.StandingActions standing;
     private PlayerMovement playerMovement;
     private PlayerLook look;
 
@@ -33,11 +33,6 @@ public class InputManager : MonoBehaviour
     private void OnEnable()
     {
         standing.Enable();
-    }
-
-    private void OnJump()
-    {
-        Debug.Log("on jump");
     }
 
     private void OnDisable()
