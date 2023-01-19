@@ -4,12 +4,17 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    // Message displayed to player when looking at an interactable
+    public bool useEvents;
+    [SerializeField]
     public string promptMessage;
 
     // Function called by the player object
     public void BaseInteract()
     {
+        if (useEvents)
+        {
+            GetComponent<InteractionEvent>().OnInteract.Invoke();
+        }
         Interact();
     }
     protected virtual void Interact()
