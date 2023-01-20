@@ -20,6 +20,12 @@ public class InputManager : MonoBehaviour
         standing.Jump.performed += ctx => playerMovement.Jump();
     }
 
+    void OnGUI()
+    {
+        // TODO: IF INVENTORY OPEN DONT LOCK CURSOR
+        //Cursor.lockState = CursorLockMode.None;
+    }
+
     private void FixedUpdate()
     {
         playerMovement.ProcessMovement(standing.Movement.ReadValue<Vector2>());

@@ -58,7 +58,7 @@ public class InventorySlot
         stackSize += amount;
     }
 
-    public void RemoveToStack(int amount)
+    public void RemoveFromStack(int amount)
     {
         stackSize -= amount;
     }

@@ -12,6 +12,7 @@ public class Pickable : Interactable
 
     protected override void Interact()
     {
+        base.Interact();
         var inventory = player.GetComponent<InventoryHolder>();
         if (!inventory) return;
 
