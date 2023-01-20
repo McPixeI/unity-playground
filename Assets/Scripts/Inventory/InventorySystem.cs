@@ -22,4 +22,47 @@ public class InventorySystem
             inventorySlots.Add(new InventorySlot());
         }
     }
+
+    public bool AddToInventory(InventoryItemData item, int amount)
+    {
+
+        // Checks if item exists in inventory
+        if (ContainsItem(item, out List<InventorySlot> slots))
+        {
+            foreach (var slot in slots)
+            {
+                if (slot.RoomLeftInStack(amount))
+                {
+                    slot.AddToStack(amount);
+                    OnInventorySlotChanged?.Invoke(slot);
+                    return true;
+                }
+            }
+
+        }
+        // If not, get first available slot
+        else if (HasFreeSlot(out InventorySlot freeSlot))
+        {
+            Debug.Log("has free slot");
+            freeSlot.UpdateInventorySlot(item, amount);
+            OnInventorySlotChanged?.Invoke(freeSlot);
+            return true;
+        }
+
+        return false;
+
+    }
+
+    public bool ContainsItem(InventoryItemData item, out List<InventorySlot> slots)
+    {
+        slots = InventorySlots.Where(i => i.ItemData == item).ToList();
+        return slots.Count > 0 ? true : false;
+    }
+
+    public bool HasFreeSlot(out InventorySlot freeSlot)
+    {
+        freeSlot = InventorySlots.FirstOrDefault(i => i.ItemData == null);
+        Debug.Log(freeSlot);
+        return freeSlot == null ? false : true;
+    }
 }
