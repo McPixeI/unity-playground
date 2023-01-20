@@ -29,7 +29,6 @@ public class InventorySystem
         // Checks if item exists in inventory
         if (ContainsItem(item, out List<InventorySlot> slots))
         {
-            Debug.Log("contains item");
             foreach (var slot in slots)
             {
                 if (slot.RoomLeftInStack(amount))
@@ -44,7 +43,6 @@ public class InventorySystem
         // If not, get first available slot
         if (HasFreeSlot(out InventorySlot freeSlot))
         {
-            Debug.Log("has free slot");
             freeSlot.UpdateInventorySlot(item, amount);
             OnInventorySlotChanged?.Invoke(freeSlot);
             return true;
