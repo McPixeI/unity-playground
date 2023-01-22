@@ -11,7 +11,6 @@ public class InventoryHolder : MonoBehaviour
     [SerializeField]
     protected InventorySystem inventorySystem;
     public InventorySystem InventorySystem => inventorySystem;
-    public static UnityAction<InventorySystem> OnDynamicInventoryDisplayRequested;
 
     protected virtual void Awake()
     {

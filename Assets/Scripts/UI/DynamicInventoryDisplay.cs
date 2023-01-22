@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StaticInventoryDisplay : InventoryDisplay
+public class DynamicInventoryDisplay : InventoryDisplay
 {
     [SerializeField]
     private InventoryHolder inventoryHolder;
